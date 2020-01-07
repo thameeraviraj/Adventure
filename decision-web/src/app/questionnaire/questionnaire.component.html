@@ -1,0 +1,13 @@
+<h3> Decision tree</h3>
+<hr>
+
+
+<span *ngFor="let ques of questionList">
+  <h5>{{ques.isQuestion ? ques.value : 'No Questions for you'}}</h5>
+  <span *ngIf="ques.linkedNodes">
+    <button
+      (click)="clickedAnswer(ques.linkedNodes[0].linkedNodes[0])">{{ques.linkedNodes ? ques.linkedNodes[0].value : ''}}</button>
+    <button
+      (click)="clickedAnswer(ques.linkedNodes[1].linkedNodes[0])">{{ques.linkedNodes ? ques.linkedNodes[1].value : ''}}</button>
+  </span>
+</span>
